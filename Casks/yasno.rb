@@ -7,7 +7,7 @@ cask "yasno" do
   desc "Native macOS Menu Bar & Desktop Widget for Yasno / DTEK power outage schedules"
   homepage "https://github.com/Holii-1/YasnoWidget"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Yasno.app"
 
