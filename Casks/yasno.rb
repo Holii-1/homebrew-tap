@@ -17,6 +17,11 @@ cask "yasno" do
                    sudo: false
   end
 
+  uninstall quit: [
+    "ua.yasno.mac.widget",
+    "YasnoWidget",
+  ]
+
   zap trash: [
     "~/Library/Application Scripts/group.ua.yasno.mac.widget",
     "~/Library/Group Containers/group.ua.yasno.mac.widget",
