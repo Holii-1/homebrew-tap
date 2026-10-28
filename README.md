@@ -7,15 +7,21 @@
 Встановлення однією командою:
 
 ```bash
-brew install Holii-1/tap/yasno
+brew install --no-quarantine Holii-1/tap/yasno
 ```
 
 Або підключення тапу окремо:
 
 ```bash
 brew tap Holii-1/tap
-brew install --cask yasno
+brew install --cask --no-quarantine yasno
 ```
+
+> **Порада:** Якщо при запуску з'являється попередження про невідомого розробника, виконайте в терміналі:
+> ```bash
+> xattr -cr /Applications/Yasno.app
+> ```
+> Або перейдіть у **Системні параметри** → **Приватність і безпека** та натисніть **«Відкрити однаково»**.
 
 ## 🔄 Оновлення
 
