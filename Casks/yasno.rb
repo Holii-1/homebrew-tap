@@ -11,6 +11,12 @@ cask "yasno" do
 
   app "Yasno.app"
 
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/Yasno.app"],
+                   sudo: false
+  end
+
   zap trash: [
     "~/Library/Application Scripts/group.ua.yasno.mac.widget",
     "~/Library/Group Containers/group.ua.yasno.mac.widget",
