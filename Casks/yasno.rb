@@ -11,18 +11,6 @@ cask "yasno" do
 
   app "Yasno.app"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/Yasno.app"],
-                   sudo: false
-    system_command "/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister",
-                   args: ["-f", "#{appdir}/Yasno.app"],
-                   sudo: false
-    system_command "/usr/bin/pluginkit",
-                   args: ["-a", "#{appdir}/Yasno.app/Contents/PlugIns/YasnoWidgetExtension.appex"],
-                   sudo: false
-  end
-
   zap trash: [
     "~/Library/Application Scripts/group.ua.yasno.mac.widget",
     "~/Library/Group Containers/group.ua.yasno.mac.widget",
