@@ -1,6 +1,6 @@
 cask "yasno" do
-  version "2.0.0"
-  sha256 "b9fd41698120cd38a318954b163c2d0ea29040d480f413674e12dba399009178"
+  version "2.0.1"
+  sha256 "6de0b8ec198968ccd6cc41bc7dc18f599c60b3ccd32e8438623b1d09080a4046"
 
   url "https://github.com/Holii-1/YasnoWidget/releases/download/v#{version}/Yasno.zip"
   name "Yasno"
@@ -14,6 +14,12 @@ cask "yasno" do
   postflight do
     system_command "/usr/bin/xattr",
                    args: ["-cr", "#{appdir}/Yasno.app"],
+                   sudo: false
+    system_command "/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister",
+                   args: ["-f", "#{appdir}/Yasno.app"],
+                   sudo: false
+    system_command "/usr/bin/pluginkit",
+                   args: ["-a", "#{appdir}/Yasno.app/Contents/PlugIns/YasnoWidgetExtension.appex"],
                    sudo: false
   end
 
